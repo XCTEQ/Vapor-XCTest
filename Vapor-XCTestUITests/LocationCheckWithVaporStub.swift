@@ -28,8 +28,12 @@ class LocationCheckWithVaporStub: XCTestCase {
         gtusernametextfieldTextField.typeText("Shashikant86")
         app.buttons["ShowButton"].tap()
         let existsPredicate = NSPredicate(format: "exists == true")
-        expectation(for: existsPredicate, evaluatedWith: app.staticTexts["London"], handler: nil)
+        expectation(for: existsPredicate, evaluatedWith: app.staticTexts["StubName"], handler: nil)
         waitForExpectations(timeout: 5, handler: nil)
-        XCTAssert(app.staticTexts["London"].exists)
+        XCTAssert(app.staticTexts["StubName"].exists)
+        XCTAssert(app.staticTexts["StubLocation"].exists)
+        XCTAssert(app.staticTexts["1000"].exists)
+        XCTAssert(app.staticTexts["100"].exists)
+        
     }
 }
